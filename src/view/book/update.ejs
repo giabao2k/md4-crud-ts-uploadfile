@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/book/update/<%=book._id%>" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="_id" value="<%=book._id%>">
+        <div>
+            <label for="name"> Name</label>
+            <input type="text" id="name" name="name" value="<%=book.name%>">
+        </div>
+        <div>
+            <label for="author"> Author</label>
+            <input type="text" id="author" name="author" value="<%=book.author%>">
+        </div>
+        <div>
+            <label for="image">Avatar</label>
+            <input type="file" id="image" name="image">
+            <img src="/<%=book.image%>" alt="">
+        </div>
+        <button>Update</button> 
+        <!-- neu bam update luong chay la gi vi sao render ra ejs list -->
+        <!-- the button trong form khong can de type tu hieu la submit -->
+    </form>
+</body>
+</html>
