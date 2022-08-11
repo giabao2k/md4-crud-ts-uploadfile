@@ -38,7 +38,7 @@ class BookController{
     }
 
     showUpdateForm = async (req: Request, res: Response) => {
-        let id = req.params.id;
+        let id = req.params.id; // req người dùng bấm vào phải bắt đc id xem id đó có tồn tại hay không
         let book = await Book.findById(id); // lấy ra 1 đối tượng book theo id
         if(book){
             res.render('book/update',{
@@ -93,5 +93,17 @@ class BookController{
         }
     }// vì sao không cần kdl req va res
     // mai viết thêm chức năng confirm
+    showConfirmDeleteForm = async (req:Request, res:Response) => {
+        let id = req.params.id; // req người dùng bấm vào phải bắt đc id xem id đó có tồn tại hay không
+        let book = await Book.findById(id); // lấy ra 1 đối tượng book theo id
+        console.log(book)
+        if(book){
+            res.render('book/confirm',{
+                book: book
+            });
+        }else{
+            res.render('error');
+        }
+    }
 }
 export default new BookController();

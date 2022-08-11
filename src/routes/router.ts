@@ -7,4 +7,6 @@ router.get('/book/create', BookController.showCreateForm);
 router.post('/book/create', BookController.createBook);
 router.get('/book/update/:id',BookController.showUpdateForm);
 router.post('/book/update/:id',BookController.updateBook);
-router.get('/book/delete/:id',BookController.deleteBook);
+
+router.get('/book/delete/:id',BookController.showConfirmDeleteForm);
+router.post('/book/delete/:id',BookController.deleteBook);

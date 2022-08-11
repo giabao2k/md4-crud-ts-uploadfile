@@ -12,5 +12,6 @@ exports.router.get('/book/create', BookController_1.default.showCreateForm);
 exports.router.post('/book/create', BookController_1.default.createBook);
 exports.router.get('/book/update/:id', BookController_1.default.showUpdateForm);
 exports.router.post('/book/update/:id', BookController_1.default.updateBook);
-exports.router.get('/book/delete/:id', BookController_1.default.deleteBook);
+exports.router.get('/book/delete/:id', BookController_1.default.showConfirmDeleteForm);
+exports.router.post('/book/delete/:id', BookController_1.default.deleteBook);
 //# sourceMappingURL=router.js.map

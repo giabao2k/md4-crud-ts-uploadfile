@@ -79,6 +79,19 @@ class BookController {
                 res.render('error');
             }
         };
+        this.showConfirmDeleteForm = async (req, res) => {
+            let id = req.params.id;
+            let book = await book_1.Book.findById(id);
+            console.log(book);
+            if (book) {
+                res.render('book/confirm', {
+                    book: book
+                });
+            }
+            else {
+                res.render('error');
+            }
+        };
     }
 }
 exports.default = new BookController();

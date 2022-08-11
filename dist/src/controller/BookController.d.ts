@@ -6,6 +6,7 @@ declare class BookController {
     showUpdateForm: (req: Request, res: Response) => Promise<void>;
     updateBook: (req: Request, res: Response) => Promise<void>;
     deleteBook: (req: Request, res: Response) => Promise<void>;
+    showConfirmDeleteForm: (req: Request, res: Response) => Promise<void>;
 }
 declare const _default: BookController;
 export default _default;
